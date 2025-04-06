@@ -12,14 +12,14 @@ struct ContentView: View {
     let rowItemsArray = ["Senthil","Kumar","Sample","Example"]
     var body: some View {
         VStack {
-            NavigationStack {
-                                
-                List {
-                    ForEach(0..<rowItemsArray.count, id: \.self) { index in
-                        Text(rowItemsArray[index])
+                NavigationStack {
+                    List(rowItemsArray, id: \.self) { player in
+                        NavigationLink {
+                            DetailContentView(name: player)
+                        } label: {
+                            Text(player)
+                        }
                     }
-                }
-                
                 .navigationTitle("TableViewExample")
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarHidden(false)

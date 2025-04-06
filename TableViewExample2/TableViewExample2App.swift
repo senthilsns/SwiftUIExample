@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct TableViewExample2App: App {
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
