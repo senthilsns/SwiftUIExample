@@ -9,11 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let rowItemsArray = ["Senthil","Kumar","Sample","Example"]
+    @StateObject private var viewModel = ContentViewModel()
+    
     var body: some View {
         VStack {
                 NavigationStack {
-                    List(rowItemsArray, id: \.self) { player in
+                    List(viewModel.items, id: \.self) { player in
                         NavigationLink {
                             DetailContentView(name: player)
                         } label: {
